@@ -1,0 +1,27 @@
+{
+  "name": "deep_typecript",
+  "version": "1.0.0",
+  "description": "",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "(npx parcel serve index.html ) & npx parcel watch index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walter708/deep_typecript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walter708/deep_typecript/issues"
+  },
+  "homepage": "https://github.com/walter708/deep_typecript#readme",
+  "dependencies": {
+    "parcel": "^2.8.1"
+  },
+  "devDependencies": {
+    "prettier": "2.8.1"
+  }
+}
