@@ -535,34 +535,30 @@ function hmrAcceptRun(bundle, id) {
 // import {Roles} from "../archive/types/enums.type";
 // import { intro2  } from "../archive/functions/optionalParameter.function";
 // console.log(intro2("John", 24))
-var _customParameterFunction = require("../archive/functions/customParameter..function");
-console.log(_customParameterFunction.convertAge(_customParameterFunction.person));
+// import * as cp from "../archive/functions/customParameter..function"
+// console.log(cp.convertAge(cp.person));
+/** function overloading */ var _functionOverlaodingFunction = require("../archive/functions/functionOverlaoding.function");
+console.log((0, _functionOverlaodingFunction.reserve)(new Date(), new Date(), "New York", "Brazil"));
+console.log((0, _functionOverlaodingFunction.reserve)(new Date(), "France", "Canada"));
 
-},{"../archive/functions/customParameter..function":"4I7QA"}],"4I7QA":[function(require,module,exports) {
+},{"../archive/functions/functionOverlaoding.function":"cc8OC"}],"cc8OC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "person", ()=>person);
-parcelHelpers.export(exports, "convertAge", ()=>convertAge);
-let AgeUnit;
-(function(AgeUnit) {
-    AgeUnit["years"] = "years";
-    AgeUnit["months"] = "months";
-})(AgeUnit || (AgeUnit = {}));
-let person = {
-    name: "Micheal",
-    age: 23,
-    ageUnit: AgeUnit.years,
-    country: "Costrica",
-    greet: (greeting)=>{
-        return `${greeting} ${person.name}`;
-    }
+parcelHelpers.export(exports, "reserve", ()=>reserve);
+const reserve = (departureDate, returnDateOrdepartingFrom, departingFromDestination, destination)=>{
+    if (returnDateOrdepartingFrom instanceof Date && destination) return {
+        departureDate: departureDate,
+        returnDate: returnDateOrdepartingFrom,
+        departingFrom: departingFromDestination,
+        destination: destination
+    };
+    else if (typeof returnDateOrdepartingFrom === "string") return {
+        departureDate: departureDate,
+        departingFrom: returnDateOrdepartingFrom,
+        destination: departingFromDestination
+    };
+    throw new Error("Please provide a valid reservation parameter type");
 };
-console.log(person.greet("Good morning"));
-function convertAge(person) {
-    person.age = person.age * 12;
-    person.ageUnit = AgeUnit.months;
-    return person;
-}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
